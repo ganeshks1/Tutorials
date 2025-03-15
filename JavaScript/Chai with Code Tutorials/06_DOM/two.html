@@ -1,0 +1,56 @@
+<!DOCTYPE html> <!-- Defines the document type as HTML5 -->
+<head>
+    <html lang="en"> <!-- Specifies the language of the document as English -->
+    <meta charset="UTF-8"> <!-- Defines the character encoding for the document -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ensures responsive design by setting the viewport -->
+    <title>DOM 2</title> <!-- Sets the title of the webpage -->
+</head>
+<body style="background-color: black; color: white"> <!-- Sets the page background to black and text color to white -->
+    <div class="parent"> <!-- Parent container for the child divs -->
+        <div class="day">Monday</div> <!-- A child div with text content "Monday" -->
+        <div class="day">Tuesday</div> <!-- A child div with text content "Tuesday" -->
+        <div class="day">Wednesday</div> <!-- A child div with text content "Wednesday" -->
+        <div class="day">Thursday</div> <!-- A child div with text content "Thursday" -->
+    </div>
+
+    <script>
+        // Select the parent element with the class "parent"
+        const parent = document.querySelector('.parent');
+        console.log(parent); // Logs the parent element to the console
+
+        // Logs the live HTMLCollection of child elements inside the parent
+        console.log(parent.children);
+
+        // Access and log the inner text of the second child element (index 1) in the parent
+        console.log(parent.children[1].innerText);
+
+        // Iterate over all child elements of the parent
+        for (let i = 0; i < parent.children.length; i++) {
+            // Logs the inner HTML (content) of each child element
+            console.log(parent.children[i].innerHTML);
+        }
+
+        // Change the text color of the second child element to orange
+        parent.children[1].style.color = 'orange';
+
+        // Logs the first child element of the parent
+        console.log(parent.firstElementChild);
+
+        // Logs the last child element of the parent
+        console.log(parent.lastElementChild);
+
+        // Select the first element with the class "day"
+        const dayOne = document.querySelector('.day');
+        console.log(dayOne); // Logs the first element with the class "day"
+
+        // Logs the parent element of the selected dayOne element
+        console.log(dayOne.parentElement);
+
+        // Logs the next sibling element of the selected dayOne element
+        console.log(dayOne.nextElementSibling);
+
+        // Logs all child nodes of the parent, including text nodes (e.g., whitespace and line breaks)
+        console.log("Nodes: ", parent.childNodes); 
+    </script>
+</body>
+</html>

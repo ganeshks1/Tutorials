@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM 3</title>
+</head>
+<body style="background-color: black; color: white">
+    
+
+
+    <script>
+        // Create a new div element
+        const div = document.createElement('div');
+        console.log(div); // Logs the newly created div to the console
+
+        // Add a class name to the div
+        div.className = 'main';
+
+        // Assign a random id to the div (random number between 1 and 10)
+        div.id = Math.floor((Math.random() * 10 + 1));
+
+        // Set a custom attribute 'title' with the value "Generated Title"
+        div.setAttribute("title", "Generated Title");
+
+        // Apply inline styles to the div
+        div.style.padding = 1; // Sets padding to 1 (likely in pixels by default)
+        div.style.backgroundColor = 'green'; // Sets background color to green
+
+        // Set the inner text of the div
+        div.innerText = 'Google.com';
+
+        // Create a text node with the content "Chai aur code"
+        const addText = document.createTextNode("Chai aur code");
+
+        // Append the created text node to the div as a child
+        div.appendChild(addText);
+
+        // Append the fully created div to the body of the document
+        document.body.appendChild(div);
+    </script>
+</body>
+</html>

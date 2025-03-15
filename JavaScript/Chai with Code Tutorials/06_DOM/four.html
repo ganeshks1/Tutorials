@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM 4 </title>
+</head>
+<body style="background-color: black; color: white">
+    <ul class="language">
+        <li>Javascript</li>
+    </ul> 
+    
+    <script>
+        // Function to add a new language to the list
+        function addLanguage(langName) {
+            // Create a new <li> element
+            const li = document.createElement('li');
+            
+            // Set the innerHTML of the <li> to the provided language name
+            li.innerHTML = `${langName}`;
+            
+            // Append the new <li> to the <ul> with the class 'language'
+            document.querySelector('.language').appendChild(li);
+        }
+
+        // Add languages using the addLanguage function
+        addLanguage('Python');       // Adds "Python" to the list
+        addLanguage('TypeScript');  // Adds "TypeScript" to the list
+
+        // Optimized way to add a language to the list
+        function optimisedWay(langName) {
+            // Create a new <li> element
+            const li = document.createElement('li');
+            
+            // Use createTextNode for text content (safer than innerHTML to avoid injection issues)
+            li.appendChild(document.createTextNode(langName));
+            
+            // Append the new <li> to the <ul> with the class 'language'
+            document.querySelector('.language').appendChild(li);
+        }
+
+        // Add a language using the optimized function
+        optimisedWay("Java"); // Adds "Java" to the list
+
+        // Edit the second language in the list
+        const secondLang = document.querySelector("li:nth-child(2)"); // Selects the second <li>
+        console.log(secondLang); // Logs the second <li> element to the console
+
+        // Create a new <li> to replace the second language
+        const newLi = document.createElement('li');
+        newLi.textContent = "Mojo"; // Sets the text content of the new <li> to "Mojo"
+        secondLang.replaceWith(newLi); // Replaces the second <li> with the new <li>
+
+        // Example 2: Replace the first language in the list using outerHTML
+        const firstLang = document.querySelector("li:first-child"); // Selects the first <li> element
+        console.log(firstLang); // Logs the first <li> element to the console
+        
+        // Replace the first <li> with new HTML content
+        firstLang.outerHTML = '<li>GoLang</li>'; // Replaces the first <li> entirely
+
+        // Remove the last language in the list
+        const fourthLang = document.querySelector("li:last-child"); // Selects the last <li> element
+        console.log(fourthLang); // Logs the last <li> element to the console
+        
+        // Remove the last <li> element from the DOM
+        fourthLang.remove();
+    </script>
+</body>
+</html>
