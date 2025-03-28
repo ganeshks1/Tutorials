@@ -7,7 +7,7 @@ const remaining = document.querySelector('.lastResult');
 const lowOrHi = document.querySelector('.lowOrHi');
 const startOver = document.querySelector('.resultParas');
 
-const p = document.createElement('p');
+const p = document.createElement('p'); //comment
 
 let prevGuess = [];
 let numGuess = 1;
